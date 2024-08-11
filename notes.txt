@@ -1,0 +1,66 @@
+In github codespaces, port numbers below 1024 cannot be exposed because security.
+
+fmt is the standard formatting library.
+net/http is the standard http library.
+
+fmt.Print("%v/%d/%f/%s", number) => C like syntax.
+var number int => Declaring variable without value
+var number := 4 => declaring variable with value, compiler figures out type.
+
+handleFunc is the Go equivalent of @app.route, associates a URL path with a function.
+w.Header().Set() is used to set header to tell client what type of data server is sending (plaintext/html/json).
+w.writeHeader(http.status) is used to tell the browser the response status.
+ListenandServe() spins up a http.Server with default readtimeout and writetimeout.
+Multiplexer or mux is a struct used to assign functions to paths.
+ListenAndServe starts an HTTP server with a given address and handler. The handler is usually nil, which means to use DefaultServeMux.
+DefaultServeMux is just a predefined http.ServeMux. You can use the default server and mux or create your own if necessary.
+
+fprintf(w, "") prints to specified path w.
+io.ReadAll() reads content from a file or stream of data.
+
+Unsigned integers, declared with one of the uint keywords, can only store non-negative integer values.
+    var k uint
+    var x uint = -100 => Overflow error
+
+Arrays in Go are static.
+    arr1 := [5]int{} => Empty array of size 5 initialized as [0,0,0,0,0] since 0 is default value of int type.
+    arr2 := [5]int{1,2} => Partially filled array with size 5 but only two assigned values [1,2,0,0,0].
+    arr3 := [...]int{2,31,15,7,8,5} => array takes size of input.
+
+Slices in Go.
+Slices are dynamic arrays. Their sizes can be changed and modified. Each array and slice can only store data of same type.
+You can define slices using the make() function.
+    slice_n := make([]int, 9, 12)
+Use append() to add elements to a slice.
+    slice_n = append(slice_n,13,6,25,20)
+    fmt.Println(slice_n)
+    fmt.Println(len(slice_n), cap(slice_n))
+If the capacity of a slice is exceeded, the compiler doubles it (from 12 to 24 in this case).
+
+Go still has that octal nonsense problem like JS (Python and Ruby too apparently). So equating 15 and 017 will return true.
+
+Putting else on a new line causes an error. The brackets in the else statement should be like } else {. Whose bright idea was this?
+
+It is possible to have multiple values for each case in the switch statement.
+    switch day {
+    case 1,3,5:
+        fmt.Println("Odd roll")
+    case 2,4,6:
+        fmt.Println("Even roll")
+    default:
+        fmt.Println("Invalid diceroll")
+    }
+
+Go does not have while loops. For loop is the only loop in Go.
+    for(i:=0;i<5;i++) {
+        fmt.Println(i)
+    }
+The continue statement is used to skip one or more iterations in the loop.
+The break statement is used to break/terminate the loop execution.
+
+Functions and values which are to be exported from a .go file are named with a capital letter.
+
+TODO
+    structs
+    for loops
+    maps
