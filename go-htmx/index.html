@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+    <title>DCEU Films</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 100;
+            background-color: rgb(198, 39, 39);
+            color: white;
+            text-align: center;
+            font-size: 20px !important;
+        }
+        h2, p {
+            margin: 0;
+        }
+        .film {
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            background-color: dodgerblue;
+            margin: 1rem;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form hx-post="/search/" hx-target="#film-list">
+        <input type="text" name="search-query" id="search">
+    </form>
+    
+    <h1>DCEU</h1>
+    <div id="film-list">
+    {{ range . }}
+    <div class="film">
+    <h2>{{.Name}}</h2>
+    <p>Director: {{.Director}}</p>
+    <p>Year: {{.Year}}</p>
+    <p>Rating: {{.Rating}}</p>
+    </div>
+    {{ end }}
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Man of Steel",
+        "director": "Zack Snyder",
+        "year": "2013",
+        "rating": 8.8
+    },
+    {
+        "name": "Batman v Superman",
+        "director": "Zack Snyder",
+        "year": "2016",
+        "rating": 6.2
+    },
+    {
+        "name": "Suicide Squad",
+        "director": "David Ayer",
+        "year": "2016",
+        "rating": 3.5
+    },
+    {
+        "name": "Wonder Woman",
+        "director": "Patty Jenkins",
+        "year": "2017",
+        "rating": 8.0
+    },
+    {
+        "name": "Aquaman",
+        "director": "James Wan",
+        "year": "2018",
+        "rating": 6.5
+    },
+    {
+        "name": "Shazam!",
+        "director": "David Sandberg",
+        "year": "2019",
+        "rating": 7.8
+    },
+    {
+        "name": "Birds of Prey",
+        "director": "Cathy Yan",
+        "year": "2020",
+        "rating": 4.5
+    },
+    {
+        "name": "Wonder Woman 1984",
+        "director": "Patty Jenkins",
+        "year": "2020",
+        "rating": 4.5
+    },
+    {
+        "name": "Justice League",
+        "director": "Zack Snyder",
+        "year": "2021",
+        "rating": 8.5
+    },
+    {
+        "name": "The Suicide Squad",
+        "director": "James Gunn",
+        "year": "2021",
+        "rating": 6.5
+    },
+    {
+        "name": "Black Adam",
+        "director": "Jaume Collet-Serra",
+        "year": "2022",
+        "rating": 5.2
+    },
+    {
+        "name": "Shazam! Fury of the Gods",
+        "director": "David Sandberg",
+        "year": "2023",
+        "rating": 5.2
+    },
+    {
+        "name": "The Flash",
+        "director": "Andy Muschietti",
+        "year": "2023",
+        "rating": 6.8
+    }
+]

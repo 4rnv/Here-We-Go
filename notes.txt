@@ -60,6 +60,8 @@ The break statement is used to break/terminate the loop execution.
 
 Functions and values which are to be exported from a .go file are named with a capital letter.
 
+Structs are also named with a capital letter. Attributes of structs should also be capital.
+
 TODO
     structs
     for loops
