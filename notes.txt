@@ -62,6 +62,17 @@ Functions and values which are to be exported from a .go file are named with a c
 
 Structs are also named with a capital letter. Attributes of structs should also be capital.
 
+Functions which are to be exported in Go must start with a capital letter.
+
+Vercel stuff.
+Vercel wants me to rename package main to package handler. 
+Also the start file can only be named main.go. 
+But you can't name the main function as func main BECAUSE YOU JUST CAN'T OKAY.
+package handler -> func Handler()
+Also you need to make a go.mod file for module management. 
+Also all exported functions must have capital names.
+
+
 TODO
     structs
     for loops
