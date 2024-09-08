@@ -71,9 +71,3 @@ But you can't name the main function as func main BECAUSE YOU JUST CAN'T OKAY.
 package handler -> func Handler()
 Also you need to make a go.mod file for module management. 
 Also all exported functions must have capital names.
-
-
-TODO
-    structs
-    for loops
-    maps
