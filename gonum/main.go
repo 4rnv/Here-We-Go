@@ -49,7 +49,7 @@ func subtract(m, n mat.Matrix) mat.Matrix {
 	return o
 }
 
-func addScalar(scalar_value float64, m mat.Matrix) mat.Matrix {
+func add_scalar(scalar_value float64, m mat.Matrix) mat.Matrix {
 	r, c := m.Dims()
 	array := make([]float64, r*c)
 	for x := 0; x < r*c; x++ {
@@ -61,7 +61,7 @@ func addScalar(scalar_value float64, m mat.Matrix) mat.Matrix {
 
 func input(r int, c int) []float64 {
 	var filled_array = make([]float64, r*c)
-	for i := 0; i < 9; i++ {
+	for i := 0; i < r*c; i++ {
 		fmt.Printf("Enter element %d: ", i+1)
 		fmt.Scanf("%f", &filled_array[i])
 	}
@@ -70,10 +70,11 @@ func input(r int, c int) []float64 {
 
 func main() {
 	fmt.Println("Enter matrix elements(9): ")
-	var input_array1 = input(3, 3)
-	var input_array2 = input(3, 3)
-	var m = mat.NewDense(3, 3, input_array1)
-	var n = mat.NewDense(3, 3, input_array2)
+	var input_array1 = input(2, 2)
+	var input_array2 = input(2, 2)
+	var m = mat.NewDense(2, 2, input_array1)
+	var n = mat.NewDense(2, 2, input_array2)
+	var output mat.Matrix
 	fmt.Println(mat.Formatted(m, mat.Prefix("    "), mat.FormatPython()))
 	fmt.Println(mat.Formatted(n, mat.Prefix("    "), mat.FormatPython()))
 	fmt.Printf(`Select Operation to perform:
@@ -83,4 +84,32 @@ func main() {
 	4.Standard Multiplication
 	5.Scalar Addition
 	6.Scalar Multiplication`)
+	var choice int
+	fmt.Scanln(&choice)
+	switch choice {
+	case 1:
+		output = add(m,n)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	case 2:
+		output = subtract(m,n)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	case 3:
+		output = dot(m,n)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	case 4:
+		output = multiply(m,n)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	case 5:
+		var scalar float64
+		fmt.Println("Enter scalar value: ")
+		fmt.Scanf("%f", &scalar)
+		output = add_scalar(scalar, m)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	case 6:
+		var scalar float64
+		fmt.Println("Enter scalar value: ")
+		fmt.Scanf("%f", &scalar)
+		output = scale(scalar, m)
+		fmt.Println(mat.Formatted(output, mat.Prefix("    "), mat.FormatPython()))
+	}
 }
