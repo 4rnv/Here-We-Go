@@ -27,7 +27,8 @@ Arrays in Go are static.
     arr2 := [5]int{1,2} => Partially filled array with size 5 but only two assigned values [1,2,0,0,0].
     arr3 := [...]int{2,31,15,7,8,5} => array takes size of input.
 
-Slices in Go.
+SLICES IN GO
+
 Slices are dynamic arrays. Their sizes can be changed and modified. Each array and slice can only store data of same type.
 You can define slices using the make() function.
     slice_n := make([]int, 9, 12)
@@ -64,10 +65,30 @@ Structs are also named with a capital letter. Attributes of structs should also 
 
 Functions which are to be exported in Go must start with a capital letter.
 
-Vercel stuff.
-Vercel wants me to rename package main to package handler. 
-Also the start file can only be named main.go. 
-But you can't name the main function as func main BECAUSE YOU JUST CAN'T OKAY.
-package handler -> func Handler()
-Also you need to make a go.mod file for module management. 
-Also all exported functions must have capital names.
+You write return inside a function without specifying the object/variable to be returned if you specify the name of the variable to be returned after the function parameters.
+
+	func add(m,n int) (sum int) {
+		sum = m+n
+		return
+	}
+
+FUNCTION v METHOD v STRUCT
+A function is a block of code that performs a specific task. It can take parameters, perform operations, and return a value.
+	func add(a int, b int) int {
+		return a + b
+	}
+
+A method is a function that is associated with a specific data type (usually a struct). It has a receiver, which allows it to operate only on instances of that type. Receiver is written before the name of the function.
+	type Circle struct {
+		Radius float64
+	}
+
+	func (c Circle) Area() float64 {
+		return 3.14 * c.Radius * c.Radius
+	}
+
+A struct is a composite data type that groups together variables (fields) under a single name. It is used to create complex data types that can hold multiple values of different types.
+	type Person struct {
+		Name string
+		Age  int
+	}
