@@ -37,6 +37,7 @@ func hexToRGBA(hex string) color.RGBA {
 }
 
 func main() {
+	// Pass -primary (hexcode), -secondary (hexcode), -filename (png) as CLI arguments
 	const size = 1024
 	const outerRadius = size / 2
 	const innerRadius = size / 4
